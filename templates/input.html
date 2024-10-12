@@ -1,0 +1,92 @@
+{% include 'base.html' %}
+
+{%block content%}
+<div class="container">
+    <div>
+        
+    </div>
+    <form action="{{url_for('predict')}}" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <div>
+            <h1 class="text-center">Prediction</h1>
+        </div>
+        <div class="form-group">
+            {{form.mean_radius.label}}
+            {{form.mean_radius(class="form-control")}}
+            {%for error in form.mean_radius.errors%}
+                {{error}}
+            {%endfor%}
+        </div>
+        <div class="form-group">
+            {{form.mean_perimeter.label}}
+            {{form.mean_perimeter(class="form-control")}}
+            {%for error in form.mean_perimeter.errors%}
+            {{error}}
+        {%endfor%}
+        </div>
+        <div class="form-group">
+            {{form.mean_area.label}}
+            {{form.mean_area(class="form-control")}}
+            {%for error in form.mean_area.errors%}
+            {{error}}
+        {%endfor%}
+        </div>
+
+        <div class="form-group">
+            {{form.mean_concavity.label}}
+            {{form.mean_concavity(class="form-control")}}
+            {%for error in form.mean_concavity.errors%}
+            {{error}}
+        {%endfor%}
+        </div>
+        <div class="form-group">
+            {{form.mean_concave_points.label}}
+            {{form.mean_concave_points(class="form-control")}}
+            {%for error in form.mean_concave_points.errors%}
+            {{error}}
+        {%endfor%}
+        </div>
+        <div class="form-group">
+            {{form.worst_radius.label}}
+            {{form.worst_radius(class="form-control")}}
+            {%for error in form.worst_radius.errors%}
+            {{error}}
+        {%endfor%}
+        </div>
+        <div class="form-group">
+            {{form.worst_perimeter.label}}
+            {{form.worst_perimeter(class="form-control")}}
+            {%for error in form.worst_perimeter.errors%}
+            {{error}}
+        {%endfor%}
+        </div>
+        <div class="form-group">
+            {{form.worst_area.label}}
+            {{form.worst_area(class="form-control")}}
+            {%for error in form.worst_area.errors%}
+            {{error}}
+        {%endfor%}
+        </div>
+        <div class="form-group">
+            {{form.worst_concavity.label}}
+            {{form.worst_concavity(class="form-control")}}
+            {%for error in form.worst_concavity.errors%}
+            {{error}}
+        {%endfor%}
+        </div>
+        <div class="form-group">
+            {{form.worst_concave_points.label}}
+            {{form.worst_concave_points(class="form-control")}}
+            {%for error in form.worst_concave_points.errors%}
+            {{error}}
+        {%endfor%}
+        </div>
+
+        <div class="form-group">
+            {{form.send(class="btn btn-success")}}
+        </div>
+    </form>
+
+</div>
+
+{%endblock%}

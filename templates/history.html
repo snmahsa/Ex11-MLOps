@@ -1,0 +1,64 @@
+{% extends 'base.html'%}
+{% block content%}
+<div class="container mt-5">
+<h1 class="text-center">Prediction</h1>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    <div class="alert alert-info">
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
+{% endwith %}
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>mean radius</th>
+            <th>mean perimeter</th>
+            <th>mean area</th>
+            <th>mean concavity</th>
+            <th>mean concave points</th>
+            <th>worst radius</th>
+            <th>worst perimeter</th>
+            <th>worst area</th>
+            <th>worst concavity</th>
+            <th>worst concave points</th>
+            <th>result</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        {%if inputs %}
+
+        {%for input in inputs %}
+        <tr>
+            <td>{{input.mean_radius}}</td>
+            <td>{{input.mean_perimeter}}</td>
+            <td>{{input.mean_area}}</td>
+            <td>{{input.mean_concavity}}</td>
+            <td>{{input.mean_concave_points}}</td>
+            <td>{{input.worst_radius}}</td>
+            <td>{{input.worst_perimeter}}</td>
+            <td>{{input.worst_area}}</td>
+            <td>{{input.worst_concavity}}</td>
+            <td>{{input.worst_concave_points}}</td>
+            <td>{{input.result}}</td>
+        </tr>
+        {%endfor%}
+
+
+        {%endif%}
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+</div>
+{%endblock%}
